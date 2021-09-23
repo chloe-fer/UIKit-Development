@@ -7,10 +7,12 @@
 
 import UIKit
 import MapKit
+import WebKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, WKNavigationDelegate {
 
     @IBOutlet var mapView: MKMapView!
+    var WikiURL: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,25 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(washington)
         
         //mapView.addAnnotations([london, oslo, paris, rome, washington])
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map View", style: .plain, target: self, action: #selector(selectMapType))
 
+    }
+    
+    // Day 61 - C2: Add a UIAlertController to specify how user views the map
+    @objc func selectMapType() {
+            
+        let ac = UIAlertController(title: "Map View", message: "Select Map Type", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Standard", style: .default, handler: { _ in self.mapView.mapType = .standard } ))
+
+        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: { _ in self.mapView.mapType = .satellite } ))
+        
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: { _ in self.mapView.mapType = .hybrid } ))
+
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+
+        present(ac, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -43,7 +63,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let identifier = "Capital"
         
         // 3
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        // Day 61 - C1: typecase the return value to MKPinAnnotationView so you can change the pin color
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
         
         if annotationView == nil {
             
@@ -60,22 +82,33 @@ class ViewController: UIViewController, MKMapViewDelegate {
             // 6
             annotationView?.annotation = annotation
         }
-        
+        // Day 61 - C1: change the pin color
+        annotationView?.pinTintColor = .blue
         return annotationView
         
     }
-
+        
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         guard let capital = view.annotation as? Capital else { return }
         
         let placeName = capital.title
-        let placeInfo = capital.info
+        //let placeInfo = capital.info
         
-        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+        // Day 61 - C3: Modify the callout button so pressing it shows a web view
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "WebView") as? WebViewController {
+            let url = URL(string: "https://en.wikipedia.org/wiki/" + placeName!)
+            vc.WikiURL = url
+            navigationController?.pushViewController(vc, animated: true)
+                
+        }
+    
+        //let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+        //ac.addAction(UIAlertActin(title: "OK", style: .default))
+        //present(ac, animated: true)
     }
-
 }
+
+
 
