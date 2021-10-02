@@ -13,7 +13,6 @@
 		172A8E2C2701FE4100B724DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172A8E2A2701FE4100B724DE /* Main.storyboard */; };
 		172A8E2E2701FE4600B724DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172A8E2D2701FE4600B724DE /* Assets.xcassets */; };
 		172A8E312701FE4600B724DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172A8E2F2701FE4600B724DE /* LaunchScreen.storyboard */; };
-		172A8E3F2701FF3C00B724DE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172A8E3E2701FF3C00B724DE /* Media.xcassets */; };
 		172A8E412701FF3C00B724DE /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A8E402701FF3C00B724DE /* ActionViewController.swift */; };
 		172A8E442701FF3C00B724DE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172A8E422701FF3C00B724DE /* MainInterface.storyboard */; };
 		172A8E482701FF3C00B724DE /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 172A8E3C2701FF3C00B724DE /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -214,7 +213,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				172A8E4E2702017A00B724DE /* Action.js in Resources */,
-				172A8E3F2701FF3C00B724DE /* Media.xcassets in Resources */,
 				172A8E442701FF3C00B724DE /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
