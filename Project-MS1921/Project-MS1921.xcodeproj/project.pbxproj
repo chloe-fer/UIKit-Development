@@ -7,31 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1757732827096744001ED60D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757732727096744001ED60D /* AppDelegate.swift */; };
-		1757732A27096744001ED60D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1757732927096744001ED60D /* GameScene.sks */; };
-		1757732E27096744001ED60D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757732D27096744001ED60D /* GameScene.swift */; };
-		1757733027096744001ED60D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757732F27096744001ED60D /* GameViewController.swift */; };
-		1757733327096744001ED60D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1757733127096744001ED60D /* Main.storyboard */; };
-		1757733527096749001ED60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1757733427096749001ED60D /* Assets.xcassets */; };
-		1757733D2709690C001ED60D /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1757733C2709690C001ED60D /* FireParticles.sks */; };
-		1757733F2709C957001ED60D /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1757733E2709C957001ED60D /* Smoke.sks */; };
+		1725F42E2711613500899820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F42D2711613500899820 /* AppDelegate.swift */; };
+		1725F4302711613500899820 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F42F2711613500899820 /* SceneDelegate.swift */; };
+		1725F4322711613500899820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F4312711613500899820 /* ViewController.swift */; };
+		1725F4352711613500899820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1725F4332711613500899820 /* Main.storyboard */; };
+		1725F4372711613A00899820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1725F4362711613A00899820 /* Assets.xcassets */; };
+		1725F43A2711613A00899820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1725F4382711613A00899820 /* LaunchScreen.storyboard */; };
+		1725F4422711625C00899820 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F4412711625C00899820 /* Note.swift */; };
+		1725F4442711681500899820 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F4432711681500899820 /* NoteCell.swift */; };
+		1725F4462711823200899820 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725F4452711823200899820 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1757732427096744001ED60D /* Pachinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pachinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1757732727096744001ED60D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1757732927096744001ED60D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		1757732D27096744001ED60D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		1757732F27096744001ED60D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		1757733227096744001ED60D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1757733427096749001ED60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1757733627096749001ED60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1757733C2709690C001ED60D /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
-		1757733E2709C957001ED60D /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		1725F42A2711613500899820 /* Project-MS1921.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-MS1921.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1725F42D2711613500899820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1725F42F2711613500899820 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1725F4312711613500899820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1725F4342711613500899820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1725F4362711613A00899820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1725F4392711613A00899820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1725F43B2711613A00899820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1725F4412711625C00899820 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		1725F4432711681500899820 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		1725F4452711823200899820 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1757732127096744001ED60D /* Frameworks */ = {
+		1725F4272711613500899820 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,73 +43,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1757731B27096744001ED60D = {
+		1725F4212711613400899820 = {
 			isa = PBXGroup;
 			children = (
-				1757732627096744001ED60D /* Pachinko */,
-				1757732527096744001ED60D /* Products */,
+				1725F42C2711613500899820 /* Project-MS1921 */,
+				1725F42B2711613500899820 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1757732527096744001ED60D /* Products */ = {
+		1725F42B2711613500899820 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1757732427096744001ED60D /* Pachinko.app */,
+				1725F42A2711613500899820 /* Project-MS1921.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1757732627096744001ED60D /* Pachinko */ = {
+		1725F42C2711613500899820 /* Project-MS1921 */ = {
 			isa = PBXGroup;
 			children = (
-				1757732727096744001ED60D /* AppDelegate.swift */,
-				1757732927096744001ED60D /* GameScene.sks */,
-				1757732D27096744001ED60D /* GameScene.swift */,
-				1757732F27096744001ED60D /* GameViewController.swift */,
-				1757733127096744001ED60D /* Main.storyboard */,
-				1757733427096749001ED60D /* Assets.xcassets */,
-				1757733627096749001ED60D /* Info.plist */,
-				1757733E2709C957001ED60D /* Smoke.sks */,
-				1757733C2709690C001ED60D /* FireParticles.sks */,
+				1725F42D2711613500899820 /* AppDelegate.swift */,
+				1725F42F2711613500899820 /* SceneDelegate.swift */,
+				1725F4312711613500899820 /* ViewController.swift */,
+				1725F4452711823200899820 /* DetailViewController.swift */,
+				1725F4412711625C00899820 /* Note.swift */,
+				1725F4332711613500899820 /* Main.storyboard */,
+				1725F4432711681500899820 /* NoteCell.swift */,
+				1725F4362711613A00899820 /* Assets.xcassets */,
+				1725F4382711613A00899820 /* LaunchScreen.storyboard */,
+				1725F43B2711613A00899820 /* Info.plist */,
 			);
-			path = Pachinko;
+			path = "Project-MS1921";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1757732327096744001ED60D /* Pachinko */ = {
+		1725F4292711613500899820 /* Project-MS1921 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1757733927096749001ED60D /* Build configuration list for PBXNativeTarget "Pachinko" */;
+			buildConfigurationList = 1725F43E2711613A00899820 /* Build configuration list for PBXNativeTarget "Project-MS1921" */;
 			buildPhases = (
-				1757732027096744001ED60D /* Sources */,
-				1757732127096744001ED60D /* Frameworks */,
-				1757732227096744001ED60D /* Resources */,
+				1725F4262711613500899820 /* Sources */,
+				1725F4272711613500899820 /* Frameworks */,
+				1725F4282711613500899820 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Pachinko;
-			productName = Pachinko;
-			productReference = 1757732427096744001ED60D /* Pachinko.app */;
+			name = "Project-MS1921";
+			productName = "Project-MS1921";
+			productReference = 1725F42A2711613500899820 /* Project-MS1921.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1757731C27096744001ED60D /* Project object */ = {
+		1725F4222711613400899820 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					1757732327096744001ED60D = {
+					1725F4292711613500899820 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
-			buildConfigurationList = 1757731F27096744001ED60D /* Build configuration list for PBXProject "Pachinko" */;
+			buildConfigurationList = 1725F4252711613400899820 /* Build configuration list for PBXProject "Project-MS1921" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,57 +118,66 @@
 				en,
 				Base,
 			);
-			mainGroup = 1757731B27096744001ED60D;
-			productRefGroup = 1757732527096744001ED60D /* Products */;
+			mainGroup = 1725F4212711613400899820;
+			productRefGroup = 1725F42B2711613500899820 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1757732327096744001ED60D /* Pachinko */,
+				1725F4292711613500899820 /* Project-MS1921 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1757732227096744001ED60D /* Resources */ = {
+		1725F4282711613500899820 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1757733327096744001ED60D /* Main.storyboard in Resources */,
-				1757733D2709690C001ED60D /* FireParticles.sks in Resources */,
-				1757732A27096744001ED60D /* GameScene.sks in Resources */,
-				1757733F2709C957001ED60D /* Smoke.sks in Resources */,
-				1757733527096749001ED60D /* Assets.xcassets in Resources */,
+				1725F43A2711613A00899820 /* LaunchScreen.storyboard in Resources */,
+				1725F4372711613A00899820 /* Assets.xcassets in Resources */,
+				1725F4352711613500899820 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1757732027096744001ED60D /* Sources */ = {
+		1725F4262711613500899820 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1757732E27096744001ED60D /* GameScene.swift in Sources */,
-				1757733027096744001ED60D /* GameViewController.swift in Sources */,
-				1757732827096744001ED60D /* AppDelegate.swift in Sources */,
+				1725F4322711613500899820 /* ViewController.swift in Sources */,
+				1725F42E2711613500899820 /* AppDelegate.swift in Sources */,
+				1725F4442711681500899820 /* NoteCell.swift in Sources */,
+				1725F4462711823200899820 /* DetailViewController.swift in Sources */,
+				1725F4302711613500899820 /* SceneDelegate.swift in Sources */,
+				1725F4422711625C00899820 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1757733127096744001ED60D /* Main.storyboard */ = {
+		1725F4332711613500899820 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1757733227096744001ED60D /* Base */,
+				1725F4342711613500899820 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1725F4382711613A00899820 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1725F4392711613A00899820 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1757733727096749001ED60D /* Debug */ = {
+		1725F43C2711613A00899820 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +238,7 @@
 			};
 			name = Debug;
 		};
-		1757733827096749001ED60D /* Release */ = {
+		1725F43D2711613A00899820 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -281,66 +293,66 @@
 			};
 			name = Release;
 		};
-		1757733A27096749001ED60D /* Debug */ = {
+		1725F43F2711613A00899820 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZBVTD3H3K4;
-				INFOPLIST_FILE = Pachinko/Info.plist;
+				INFOPLIST_FILE = "Project-MS1921/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.chloefermanis.Pachinko;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.chloefermanis.Project-MS1921";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1757733B27096749001ED60D /* Release */ = {
+		1725F4402711613A00899820 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZBVTD3H3K4;
-				INFOPLIST_FILE = Pachinko/Info.plist;
+				INFOPLIST_FILE = "Project-MS1921/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.chloefermanis.Pachinko;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.chloefermanis.Project-MS1921";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1757731F27096744001ED60D /* Build configuration list for PBXProject "Pachinko" */ = {
+		1725F4252711613400899820 /* Build configuration list for PBXProject "Project-MS1921" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1757733727096749001ED60D /* Debug */,
-				1757733827096749001ED60D /* Release */,
+				1725F43C2711613A00899820 /* Debug */,
+				1725F43D2711613A00899820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1757733927096749001ED60D /* Build configuration list for PBXNativeTarget "Pachinko" */ = {
+		1725F43E2711613A00899820 /* Build configuration list for PBXNativeTarget "Project-MS1921" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1757733A27096749001ED60D /* Debug */,
-				1757733B27096749001ED60D /* Release */,
+				1725F43F2711613A00899820 /* Debug */,
+				1725F4402711613A00899820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1757731C27096744001ED60D /* Project object */;
+	rootObject = 1725F4222711613400899820 /* Project object */;
 }
