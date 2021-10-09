@@ -16,9 +16,19 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "\(notes.count) Notes"
+        title = "Notes"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(createNote))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(createNote))
+        
+        let text = UIBarButtonItem(title: "\(notes.count) Notes", style: .plain, target: nil, action: nil)
+        
+        toolbarItems = [spacer, text, spacer, compose]
+        
+        navigationController?.isToolbarHidden = false
+        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(createNote))
         
         // Do any additional setup after loading the view.
     }
