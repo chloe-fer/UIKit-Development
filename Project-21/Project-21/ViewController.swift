@@ -39,6 +39,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         registerCategories()
         
         let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
 
         let content = UNMutableNotificationContent()
         content.title = "Time to get up!"
@@ -58,8 +59,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
         
+        center.add(request)
+                
     }
     
     func registerCategories() {
@@ -69,7 +71,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
         
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
+        // Day 73 - Challenge 2: add a second category
+        let remind = UNNotificationAction(identifier: "remind", title: "Remind me later ...", options: .foreground)
+        
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, remind], intentIdentifiers: [])
         
         center.setNotificationCategories([category])
         
@@ -86,18 +91,36 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             switch response.actionIdentifier {
             
+            // Day 73 - Challenge 1: show different instances of UIAlertController depending on action
             case UNNotificationDefaultActionIdentifier:
                 // user swiped to unlock
-                print("Default identifier")
+                print("Swipe")
+                showAlert(title: "Swipe")
+                
+            case "remind":
+                // user tapped "Remind me latter"
+                print("Remind")
+                showAlert(title: "Expect another reminder.")
+                scheduleLocal()
+                             
             case "show":
                 print("Show more information...")
+                showAlert(title: "Show more information...")
+                scheduleLocal()
+                
             default:
                 break
             }
         }
         completionHandler()
     }
+    
+    // Day 73 - Challenge 1: show different instances of UIAlertController depending on action
+    func showAlert(title: String) {
+        let ac = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
 
 
 }
-
