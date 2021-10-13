@@ -12,9 +12,14 @@ class DetailViewController: UIViewController {
     @IBOutlet var noteTextView: UITextView!
     
     var selectedNote: Note?
-    
-    var selectedTitle = ""
+    var notes: [Note]?
+    var selectedIndex: Int?
+
+        
     var selectedText = ""
+    
+    var share: UIBarButtonItem!
+    var trash: UIBarButtonItem!
     
     override func viewDidLoad() {
         
@@ -24,17 +29,66 @@ class DetailViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
-        selectedTitle = selectedNote?.title.uppercased() ?? "Unknown"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        
         selectedText = selectedNote?.text ?? ""
         
 //        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 20)]
 //        let attributedString = NSAttributedString(string: selectedTitle, attributes: attributes)
 //        noteTextView.attributedText = attributedString
         
-        noteTextView.text = selectedTitle + "\n\n" + selectedText
+        noteTextView.text = selectedText
         
-        // Do any additional setup after loading the view.
+
+        // tab bar
         
+        
+        trash = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashTapped))
+        share = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        
+        toolbarItems = [trash, spacer, share]
+        trash.tintColor = .systemPink
+        share.tintColor = .systemPink
+
+        navigationController?.setToolbarHidden(false, animated: false)
+    }
+    
+    @objc func trashTapped() {
+        
+        guard let index = selectedIndex else {
+            print("No index found.")
+            return
+        }
+        notes?.remove(at: index)
+        
+        saveNotes()
+    
+        navigationController?.popViewController(animated: true)
+
+    }
+    
+    @objc func shareTapped() {
+        
+        guard let note = selectedNote?.text else {
+            print("No note found.")
+            return
+        }
+        
+        let vc = UIActivityViewController(activityItems: [note], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = share
+        present(vc, animated: true)
+    }
+    
+    // done button
+    @objc func doneTapped() {
+    
+        selectedNote?.text = String(noteTextView.text)
+        // save note
+        saveNotes()
+        
+        // go back to ViewController
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
@@ -54,6 +108,18 @@ class DetailViewController: UIViewController {
 
         let selectedRange = noteTextView.selectedRange
         noteTextView.scrollRangeToVisible(selectedRange)
+    }
+    
+    func saveNotes() {
+            
+        let jsonEncoder = JSONEncoder()
+        if let savedNote = try? jsonEncoder.encode(notes) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedNote, forKey: "SavedNotes")
+            
+        } else {
+            print("Failed to save note.")
+        }
     }
     
 

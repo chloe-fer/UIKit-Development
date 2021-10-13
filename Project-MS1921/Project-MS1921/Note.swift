@@ -7,13 +7,18 @@
 
 import Foundation
 
-struct Note {
+class Note: NSObject, Codable {
     
-    var title: String
     var text: String
     var date: Date
     
+    init(text: String, date: Date) {
+        self.text = text
+        self.date = date
+    }
 }
 
-let test = [Note(title: "Password", text: "Welcome to the house of fun.", date: Date()),
-        Note(title: "Reminder", text: "Remember these things.", date: Date())]
+let someDateTime = Date(timeIntervalSinceReferenceDate: -123456789.0)
+
+let test = [Note(text: "Welcome to the house of fun. I'm not sure how to do this. I'm not sure how to do this. I'm not sure how to do this.", date: someDateTime),
+        Note(text: "Remember these things.", date: someDateTime)]
