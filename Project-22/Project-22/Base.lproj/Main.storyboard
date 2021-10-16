@@ -13,13 +13,36 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_22" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-NL-vec">
-                                <rect key="frame" x="111" y="429" width="192" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajP-DN-Sck">
+                                <rect key="frame" x="58" y="127" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="UNKNOWN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDo-NL-vec">
+                                        <rect key="frame" x="55.5" y="100" width="191.5" height="102"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1FM-vQ-ezK"/>
+                                    <constraint firstItem="aDo-NL-vec" firstAttribute="top" secondItem="ajP-DN-Sck" secondAttribute="top" constant="100" id="272-pe-0Ej"/>
+                                    <constraint firstItem="aDo-NL-vec" firstAttribute="centerX" secondItem="ajP-DN-Sck" secondAttribute="centerX" constant="1" id="EeQ-gB-Vck"/>
+                                    <constraint firstAttribute="width" secondItem="ajP-DN-Sck" secondAttribute="height" multiplier="1:1" id="Yh5-gJ-Wpr"/>
+                                    <constraint firstItem="aDo-NL-vec" firstAttribute="centerY" secondItem="ajP-DN-Sck" secondAttribute="centerY" constant="1" id="frF-sC-n4Z"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXP-eP-zfd">
+                                <rect key="frame" x="83" y="94" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Jaa-1e-Eku"/>
+                                    <constraint firstAttribute="height" constant="25" id="wPH-Fl-uIl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -27,17 +50,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aDo-NL-vec" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NBu-8i-5hr"/>
-                            <constraint firstItem="aDo-NL-vec" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NIw-Cy-aDX"/>
+                            <constraint firstItem="ajP-DN-Sck" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="Cu6-P7-kfU"/>
+                            <constraint firstItem="ajP-DN-Sck" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="Wrl-P7-tP3"/>
+                            <constraint firstItem="OXP-eP-zfd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="aDE-e8-le9"/>
+                            <constraint firstItem="ajP-DN-Sck" firstAttribute="top" secondItem="OXP-eP-zfd" secondAttribute="bottom" constant="8" symbolic="YES" id="aSz-B1-8M7"/>
+                            <constraint firstItem="OXP-eP-zfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="y3V-tZ-adD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beaconName" destination="OXP-eP-zfd" id="p4e-5s-v7f"/>
+                        <outlet property="circleView" destination="ajP-DN-Sck" id="z8I-3E-lRa"/>
                         <outlet property="distanceReading" destination="aDo-NL-vec" id="5X6-ml-vgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="80"/>
+            <point key="canvasLocation" x="95.652173913043484" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
