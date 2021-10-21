@@ -20,6 +20,7 @@ enum SequenceType: CaseIterable {
 class GameScene: SKScene {
     
     var gameScore: SKLabelNode!
+    var gameOver: SKSpriteNode!
     
     var activeSliceBG: SKShapeNode!     // background
     var activeSliceFG: SKShapeNode!
@@ -75,8 +76,10 @@ class GameScene: SKScene {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [ weak self ] in
             self?.tossEnemies()
         }
+        
+        
     }
-    
+        
     func createScore() {
         gameScore = SKLabelNode(fontNamed: "Futura")
         gameScore.horizontalAlignmentMode = .left
@@ -120,6 +123,7 @@ class GameScene: SKScene {
         
         let enemy: SKSpriteNode
         var enemyType = Int.random(in: 0...6)
+        var speedBonus = 1
         
         if forceBomb == .never {
             enemyType = 1
@@ -157,6 +161,15 @@ class GameScene: SKScene {
             }
             
             
+        // Challenge 2: create new enemy with faster speed and bonus points.
+        } else if enemyType == 2 {
+            
+            enemy = SKSpriteNode(imageNamed: "target3")
+            
+            run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
+            enemy.name = "enemyBonus"
+            speedBonus = 4
+            
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")
             run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
@@ -164,7 +177,7 @@ class GameScene: SKScene {
         }
         
         // position code
-        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
+        let randomPosition = CGPoint(x: Int.random(in: randomXPosition), y: -128)
         enemy.position = randomPosition
 
         // random velocity
@@ -172,13 +185,13 @@ class GameScene: SKScene {
         let randomXVelocity: Int
 
         if randomPosition.x < 256 {
-            randomXVelocity = Int.random(in: 8...15)
+            randomXVelocity = Int.random(in: randomVelocityFast) * speedBonus
         } else if randomPosition.x < 512 {
-            randomXVelocity = Int.random(in: 3...5)
+            randomXVelocity = Int.random(in: randomVelocitySlow) * speedBonus
         } else if randomPosition.x < 768 {
-            randomXVelocity = -Int.random(in: 3...5)
+            randomXVelocity = -Int.random(in: randomVelocitySlow) * speedBonus
         } else {
-            randomXVelocity = -Int.random(in: 8...15)
+            randomXVelocity = -Int.random(in: randomVelocityFast) * speedBonus
         }
         
         let randomYVelocity = Int.random(in: 24...32)
@@ -208,25 +221,33 @@ class GameScene: SKScene {
         let nodesAtPoint = nodes(at: location)
         
         for case let node as SKSpriteNode in nodesAtPoint {
-            if node.name == "enemy" {
+            
+            if node.name == "enemy" || node.name == "enemyBonus" {
                 
                 // destroy penguin
                 if let emitter = SKEffectNode(fileNamed: "sliceHitEnemy") {
                     emitter.position = node.position
                     addChild(emitter)
                 }
+                
+                // Challenge 2: create new enemy with faster speed and bonus points.
+                if node.name == "enemy" {
+                    score += 1
+                } else {
+                    score += 2
+                }
+                
+
                 node.name = "" // no longer marked as enemy
                 node.physicsBody?.isDynamic = false
                 
-                let scaleOut = SKAction.scale(to: 0.01, duration: 0.2)
-                let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                let scaleOut = SKAction.scale(by: scaleFactor, duration: animationDuration)
+                let fadeOut = SKAction.fadeOut(withDuration: animationDuration)
                 
                 let group = SKAction.group([scaleOut, fadeOut])
                 
                 let seq = SKAction.sequence([group, .removeFromParent()])
                 node.run(seq)
-                
-                score += 1
                 
                 // find enemy in ActiveEnemy array and remove
                 
@@ -299,7 +320,16 @@ class GameScene: SKScene {
             livesImages[0].texture = SKTexture(imageNamed: "sliceLifeGone")
             livesImages[1].texture = SKTexture(imageNamed: "sliceLifeGone")
             livesImages[2].texture = SKTexture(imageNamed: "sliceLifeGone")
+            
         }
+        
+        // Challenge 2: create a "Game Over" sprite node when player loses all their lives.
+        
+        gameOver = SKSpriteNode(imageNamed: "gameOver")
+        gameOver.position = CGPoint(x: frame.midX, y: frame.midY)
+        gameOver.zPosition = 2
+        addChild(gameOver)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -388,7 +418,7 @@ class GameScene: SKScene {
                 if node.position.y < -140 {
                     node.removeAllActions()
                     
-                    if node.name == "enemy" {
+                    if node.name == "enemy" || node.name == "enemyBonus" {
                         node.name = ""
                         subtractLife()
                         
@@ -489,4 +519,15 @@ class GameScene: SKScene {
         sequencePosition += 1
         nextSequenceQueued = false
     }
+    
+    // Challenge 1: remove magic numbers
+
+    let randomVelocityFast = 8...15
+    let randomVelocitySlow = 3...5
+    let randomXPosition = 64...960
+    let scaleFactor: CGFloat = 0.01
+    let animationDuration = 0.2
+    
 }
+
+
