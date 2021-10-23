@@ -4,9 +4,9 @@ var greeting = "Hello, playground"
 
 let name = "Chloe"
 
-for letter in name {
-    print("Give me a \(letter)!")
-}
+//for letter in name {
+//    print("Give me a \(letter)!")
+//}
 
 let letter = name[name.index(name.startIndex, offsetBy: 3)]
 
@@ -60,7 +60,22 @@ newAttributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 40), ra
 
 
 
+let challenge = "pet"
 
+challenge.withPrefix("pet")
+
+
+print("test".isNumeric)
+print("123".isNumeric)
+print("4vc.7".isNumeric)
+
+var multilines = """
+This goes
+over multiple
+lines
+"""
+
+let linesArray = multilines.lines
 
 extension String {
     
@@ -74,13 +89,32 @@ extension String {
         return String(self.dropLast(suffix.count))
     }
     
+    // Challenge 1
+    func withPrefix(_ prefix: String) -> String {
+        guard !self.hasPrefix(prefix) else { return self }
+        return String(self + prefix)
+    }
+    
+    // Challenge 2
+    var isNumeric: Bool {
+        for letter in self {
+            return letter.isNumber
+        }
+        return false
+    }
+    
+    // Challenge 3
+    var lines: [String] {
+        return self.components(separatedBy: "\n")
+    }
+    
     var capitalized: String {
         guard let firstLetter = self.first else { return "" }
         // firstLetter is a String.Element (character)
         return firstLetter.uppercased() + self.dropFirst()
         
     }
-    
+
     func containsAny(of array: [String]) -> Bool {
         for item in array {
             if self.contains(item) {
