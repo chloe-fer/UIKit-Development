@@ -21,14 +21,24 @@ extension Int {
     
     func times(action: () -> Void) {
         
-        for _ in 1 ... self {
+//        for _ in 1 ... self {
+//            action()
+//        }
+        
+        guard self > 0 else { return }
+        for _ in 0 ..< self {
             action()
         }
     }
     
 }
 
-3.times {
+let count = -5
+count.times {
+    print("WTF")
+}
+
+5.times {
  print("hello!")
 }
 
