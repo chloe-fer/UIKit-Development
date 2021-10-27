@@ -41,9 +41,7 @@ class GameScene: SKScene {
                 let position = CGPoint(x: (64 * column) + 32, y: (64 * row) + 32)
                 
                 if letter == "x" {
-                    
-                    print("load wall")
-                    
+                                        
                     // load wall
                     let node = SKSpriteNode(imageNamed: "block")
                     node.position = position
@@ -68,7 +66,6 @@ class GameScene: SKScene {
                     node.physicsBody?.contactTestBitMask = CollisionTypes.player.rawValue
                     node.physicsBody?.collisionBitMask = 0
                     addChild(node)
-                    print("this sucks")
                     
                 } else if letter == "s" {
                     
