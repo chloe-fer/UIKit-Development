@@ -44,9 +44,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jna-sE-9wj">
-                                <rect key="frame" x="910" y="13" width="100" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jna-sE-9wj">
+                                <rect key="frame" x="910" y="13" width="120" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="LAUNCH">
                                     <color key="titleColor" red="0.98823529409999999" green="0.2547163536" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,14 +61,55 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dez-cJ-04x">
+                                <rect key="frame" x="785" y="71" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqK-ds-I4e">
+                                <rect key="frame" x="22" y="71" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-U8-ITn">
+                                <rect key="frame" x="440" y="310" width="300" height="200"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.2547163536" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aKu-Ur-LsU"/>
+                                    <constraint firstAttribute="width" constant="300" id="dnc-3r-gmP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jna-sE-9wj" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="14" id="57g-Jt-hBP"/>
+                            <constraint firstItem="dLl-U8-ITn" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="AeK-hg-Hpn"/>
+                            <constraint firstItem="dLl-U8-ITn" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="EZY-HG-Htr"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="jna-sE-9wj" secondAttribute="trailing" constant="10" id="d2s-PS-g8y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="angleLabel" destination="Dts-I4-b6k" id="i73-KI-qXp"/>
                         <outlet property="angleSlider" destination="EhU-VK-WwZ" id="NfO-rS-seV"/>
+                        <outlet property="gameOverLabel" destination="dLl-U8-ITn" id="jtQ-ew-6DC"/>
                         <outlet property="launchButton" destination="jna-sE-9wj" id="EF5-uN-t3G"/>
+                        <outlet property="player1Score" destination="kqK-ds-I4e" id="ah4-4R-KrX"/>
+                        <outlet property="player2Score" destination="Dez-cJ-04x" id="UJT-eR-3md"/>
                         <outlet property="playerNumber" destination="WCP-Kj-Fsz" id="qvU-dF-tLY"/>
                         <outlet property="velocityLabel" destination="iUe-Xh-6Bs" id="EDr-Ca-Hjo"/>
                         <outlet property="velocitySlider" destination="jSf-qg-5qt" id="sVt-Ja-j6J"/>
@@ -77,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="45"/>
+            <point key="canvasLocation" x="-547.11864406779659" y="-140.48780487804879"/>
         </scene>
     </scenes>
     <resources>

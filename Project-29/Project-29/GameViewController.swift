@@ -20,6 +20,27 @@ class GameViewController: UIViewController {
     @IBOutlet var launchButton: UIButton!
     @IBOutlet var playerNumber: UILabel!
     
+    // Challenge 1: Add score
+    @IBOutlet var player1Score: UILabel!
+    @IBOutlet var player2Score: UILabel!
+     
+    
+    @IBOutlet var gameOverLabel: UILabel!
+    
+    // Challenge 1: Add score
+    var score1 = 0 {
+        didSet {
+            player1Score.text = "Score: \(score1)"
+        }
+    }
+    
+    var score2 = 0 {
+        didSet {
+            player2Score.text = "Score: \(score2)"
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +63,11 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
+        gameOverLabel.isHidden = true
+        
+        player1Score.text = "Score: 0"
+        player2Score.text = "Score: 0"
         
         angleSlider.value = 45
         velocitySlider.value = 125
@@ -79,17 +105,28 @@ class GameViewController: UIViewController {
 
     }
     
-    @IBAction func launch(_ sender: Any) {
+    @IBAction func launch(_ sender: UIButton) {
         
-        angleSlider.isHidden = true
-        angleLabel.isHidden = true
+        if sender.currentTitle == "LAUNCH" {
+            
+            angleSlider.isHidden = true
+            angleLabel.isHidden = true
 
-        velocitySlider.isHidden = true
-        velocityLabel.isHidden = true
+            velocitySlider.isHidden = true
+            velocityLabel.isHidden = true
 
-        launchButton.isHidden = true
+            launchButton.isHidden = true
 
-        currentGame?.launch(angle: Int(angleSlider.value), velocity: Int(velocitySlider.value))
+            currentGame?.launch(angle: Int(angleSlider.value), velocity: Int(velocitySlider.value))
+        } else {
+            
+            gameOverLabel.isHidden = true
+            currentGame?.newGameSetup()
+            
+        }
+        
+        
+        
     }
     
     
@@ -105,8 +142,9 @@ class GameViewController: UIViewController {
 
         velocitySlider.isHidden = false
         velocityLabel.isHidden = false
-
+           
         launchButton.isHidden = false
+        
     }
     
     

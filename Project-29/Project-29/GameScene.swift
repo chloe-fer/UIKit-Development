@@ -25,7 +25,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     var player2: SKSpriteNode!
     var banana: SKSpriteNode!
     
+    var windLabel: SKLabelNode!
+    
     var currentPlayer = 1
+    var wind: CGFloat = 0.0
+    var gameOver = false
+    
+    
     
     override func didMove(to view: SKView) {
         
@@ -33,8 +39,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
 
         createBuildings()
         createPlayers()
+        createWind()
         
         physicsWorld.contactDelegate = self
+        
+    }
+    
+    // Challenge 3: Add wind
+    func createWind() {
+        
+        windLabel = SKLabelNode(fontNamed: "Helvetica")
+        windLabel.fontSize = 18
+        windLabel.color = SKColor.white
+        windLabel.position = CGPoint(x: frame.midX, y: 610)
+        wind = CGFloat.random(in: -2...2)
+        
+        physicsWorld.gravity = CGVector(dx: wind, dy: -10)
+        
+        let windSpeed = Int(abs(wind) * 10)
+    
+        if wind < 0 {
+            windLabel.text = "Wind: \(windSpeed) km/hr <<< "
+        } else if wind > 0 {
+            windLabel.text = "Wind: \(windSpeed) km/hr >>> "
+        } else {
+            windLabel.text = "No wind today!"
+        }
+        
+        addChild(windLabel)
         
     }
     
@@ -178,18 +210,51 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         player.removeFromParent()
         banana.removeFromParent()
         
+        // Challenge 1: Add score
+        if currentPlayer == 1 {
+            viewController?.score1 += 1
+        } else {
+            viewController?.score2 += 1
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let newGame = GameScene(size: self.size)
-            newGame.viewController = self.viewController
-            self.viewController?.currentGame = newGame
             
-            self.changePlayer()
-            newGame.currentPlayer = self.currentPlayer
-            
-            let transition = SKTransition.doorway(withDuration: 1.5)
-            self.view?.presentScene(newGame, transition: transition)
+            if self.viewController?.score2 == 3 || self.viewController?.score1 == 3 {
+             
+                // Game Over
+                self.gameOver = true
+                self.viewController?.gameOverLabel.isHidden = false
+                self.viewController?.launchButton.setTitle("NEW GAME", for: .normal)
+                self.viewController?.launchButton.isHidden = false
+
+                
+            } else {
+                
+                self.gameOver = false
+                self.newGameSetup()
+            }
         }
     }
+    
+    func newGameSetup() {
+        
+        let newGame = GameScene(size: self.size)
+        newGame.viewController = self.viewController
+        self.viewController?.currentGame = newGame
+        self.viewController?.launchButton.setTitle("LAUNCH", for: .normal)
+        
+        if gameOver {
+            viewController?.score1 = 0
+            viewController?.score2 = 0
+        }
+        
+        self.changePlayer()
+        newGame.currentPlayer = self.currentPlayer
+        
+        let transition = SKTransition.doorway(withDuration: 1.5)
+        self.view?.presentScene(newGame, transition: transition)
+    }
+    
     
     func changePlayer() {
         
