@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KrT-Ah-BWO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_MS28_30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TYF-Dm-E6r">
+                                <rect key="frame" x="20" y="138" width="374" height="674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip Count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-qu-GED">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-pC-664">
+                                        <rect key="frame" x="0.0" y="136.5" width="374" height="128.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-A9-UcE">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ki1-Jx-XBq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9S2-q1-5g3">
+                                                <rect key="frame" x="127.5" y="0.0" width="119" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAb-d2-dWE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i18-H0-Dri">
+                                                <rect key="frame" x="254.5" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o92-VN-TaO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-3H-F3A">
+                                        <rect key="frame" x="0.0" y="273" width="374" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lra-ue-rmU">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXd-lW-c1y"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDT-Zl-7ET">
+                                                <rect key="frame" x="127.5" y="0.0" width="119" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RGO-Qk-Gcb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-d2-MDq">
+                                                <rect key="frame" x="254.5" y="0.0" width="119.5" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HKd-JY-1dy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-P2-K9X">
+                                        <rect key="frame" x="0.0" y="409" width="374" height="128.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-Uc-6U0">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53E-qa-v09"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBE-QB-7Z8">
+                                                <rect key="frame" x="127.5" y="0.0" width="119" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHN-gM-iFO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o8-7d-TMf">
+                                                <rect key="frame" x="254.5" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIE-tI-lmV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Km-Qn-Pni">
+                                        <rect key="frame" x="0.0" y="545.5" width="374" height="128.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-g0-8H6">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tuw-o1-WFY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwz-4p-Z0K">
+                                                <rect key="frame" x="127.5" y="0.0" width="119" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agg-9a-d4Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjB-GY-HSa">
+                                                <rect key="frame" x="254.5" y="0.0" width="119.5" height="128.5"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2h-pA-1XJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TYF-Dm-E6r" secondAttribute="bottom" constant="50" id="2wb-q7-jrT"/>
+                            <constraint firstItem="TYF-Dm-E6r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="DnS-q6-2Bd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TYF-Dm-E6r" secondAttribute="trailing" constant="20" id="XdU-pI-ag9"/>
+                            <constraint firstItem="TYF-Dm-E6r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dm3-mO-rxM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="x26-tk-kHG"/>
+                    <connections>
+                        <outlet property="flipLabel" destination="qOY-qu-GED" id="xrC-4f-P0E"/>
+                        <outletCollection property="cardButtons" destination="VuL-A9-UcE" collectionClass="NSMutableArray" id="cKs-bR-hHo"/>
+                        <outletCollection property="cardButtons" destination="9S2-q1-5g3" collectionClass="NSMutableArray" id="EKo-Nm-kCM"/>
+                        <outletCollection property="cardButtons" destination="i18-H0-Dri" collectionClass="NSMutableArray" id="mGi-S7-jKN"/>
+                        <outletCollection property="cardButtons" destination="SCJ-d2-MDq" collectionClass="NSMutableArray" id="3k3-6a-Tsq"/>
+                        <outletCollection property="cardButtons" destination="lra-ue-rmU" collectionClass="NSMutableArray" id="MeD-Zd-ZxR"/>
+                        <outletCollection property="cardButtons" destination="RDT-Zl-7ET" collectionClass="NSMutableArray" id="Ni5-ds-3HT"/>
+                        <outletCollection property="cardButtons" destination="qdj-Uc-6U0" collectionClass="NSMutableArray" id="ApT-27-wHb"/>
+                        <outletCollection property="cardButtons" destination="MBE-QB-7Z8" collectionClass="NSMutableArray" id="QRl-hM-oVB"/>
+                        <outletCollection property="cardButtons" destination="8o8-7d-TMf" collectionClass="NSMutableArray" id="U3n-2f-gm6"/>
+                        <outletCollection property="cardButtons" destination="Kwz-4p-Z0K" collectionClass="NSMutableArray" id="5hx-Pf-BpP"/>
+                        <outletCollection property="cardButtons" destination="mo6-g0-8H6" collectionClass="NSMutableArray" id="ucY-69-mGe"/>
+                        <outletCollection property="cardButtons" destination="FjB-GY-HSa" collectionClass="NSMutableArray" id="Olg-1M-Cyl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811.59420289855075" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="owM-dX-IHR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KrT-Ah-BWO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nAY-j3-C6W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="45W-lJ-LUp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99j-B4-rwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.652173913043484" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
